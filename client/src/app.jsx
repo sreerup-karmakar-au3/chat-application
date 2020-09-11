@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react'
 import io from "socket.io-client"
 
-import './app.css'
+import MyMessage from './container/mymessage'
+import PartnerMessage from './container/partnermessage'
+
+import './styles/app.css'
 
 export default function App() {
     const [yourID, setYourID] = useState();
@@ -36,23 +39,15 @@ export default function App() {
     }
 
     return (
-        <div className="container">
+        <div className="container is-fluid">
             <div id="message-thread">
                 {
                     messages.map((message, indx) => {
                         if(message.id === yourID) {
-                            return (
-                                <div key={indx}>
-                                    {message.body}
-                                </div>
-                            )
+                            return <MyMessage key={indx} content={message.body}/>
                         }
                         else {
-                            return (
-                                <div key={indx}>
-                                    {message.body}
-                                </div>
-                            )
+                            return <PartnerMessage key={indx} content={message.body}/>
                         }
                     })
                 }
@@ -60,10 +55,10 @@ export default function App() {
             <div id="message-field">
                 <form className="field is-grouped" onSubmit={sendMessage}>
                     <p className="control is-expanded">
-                        <input className="input" type="text" placeholder="Type your message"/>
+                        <input className="input is-rounded" type="text" value={ownMessage} onChange={e => setOwnMessage(e.target.value)}  placeholder="Type your message"/>
                     </p>
                     <p className="control">
-                        <button className="button is-info" type="submit">Send</button>
+                        <button className="button is-primary is-rounded is-outlined is-inverted" type="submit">SEND</button>
                     </p>
                 </form>
             </div>

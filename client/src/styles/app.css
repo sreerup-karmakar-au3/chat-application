@@ -1,0 +1,16 @@
+.container {
+    height: 100%;
+    padding-top: 12px;
+}
+
+#message-thread {
+    margin-bottom: 1%;
+    height: 90%;
+    background-color: #fafafa;
+    border-radius: 10px;
+    overflow-y: scroll;
+}
+
+#message-field {
+    height: 8%;
+}

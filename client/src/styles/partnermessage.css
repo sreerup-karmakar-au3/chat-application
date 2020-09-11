@@ -1,0 +1,14 @@
+.partmsg {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+.partmsg-body {
+    background-color: #ffe0b2;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 75%;
+    padding: 10px;
+}
