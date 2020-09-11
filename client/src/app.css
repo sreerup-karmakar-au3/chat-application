@@ -1,0 +1,11 @@
+.container {
+    height: 100%;
+}
+
+#message-thread {
+    height: 90%;
+}
+
+#message-field {
+    height: 10%;
+}
